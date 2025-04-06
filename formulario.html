@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if David has a good opinion of you</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="lbozo.html">Bio</a>
+        <a href="formulario.html">Test if you're cool to me</a>
+    </nav>
+    
+    <section class="form-container">
+        <h2>Check if David has a good opinion of you by answering these questions</h2>
+        <form id="skillIssueForm" action="#" method="post">
+            <label for="question1">What's your favorite genre of music?</label>
+            <select name="question1" id="question1">
+                <option value="emo" data-points="20">Emo Rap</option>
+                <option value="alt-rock" data-points="10">Alternative Rock</option>
+                <option value="shoegaze" data-points="15">Shoegaze</option>
+                <option value="rock" data-points="5">Rock</option>
+                <option value="other" data-points="0">Other</option>
+            </select>
+            
+            <label for="question2">What's your favorite type of game?</label>
+            <select name="question2" id="question2">
+                <option value="rpg" data-points="20">RPG</option>
+                <option value="mmorpg" data-points="25">MMORPG</option>
+                <option value="fps" data-points="5">FPS</option>
+                <option value="strategy" data-points="10">Strategy</option>
+                <option value="other" data-points="0">Other</option>
+            </select>
+            
+            <label for="question4">What's your favorite emo-related aesthetic?</label>
+            <select name="question4" id="question4">
+                <option value="goth" data-points="20">Goth</option>
+                <option value="punk" data-points="15">Punk</option>
+                <option value="grunge" data-points="10">Grunge</option>
+                <option value="vintage" data-points="5">Vintage Emo</option>
+                <option value="other" data-points="0">Other</option>
+            </select>
+            
+            <label for="question5">Do you like dark aesthetics?</label>
+            <select name="question5" id="question5">
+                <option value="yes" data-points="20">Yes, very much</option>
+                <option value="no" data-points="0">No</option>
+            </select>
+            
+            <label for="question6">How often do you customize your personal space to reflect your aesthetic?</label>
+            <select name="question6" id="question6">
+                <option value="often" data-points="20">Often</option>
+                <option value="sometimes" data-points="10">Sometimes</option>
+                <option value="rarely" data-points="5">Rarely</option>
+                <option value="never" data-points="0">Never</option>
+            </select>
+            
+            <label for="question7">Do you like playing in dark or quiet environments?</label>
+            <select name="question7" id="question7">
+                <option value="yes" data-points="15">Yes</option>
+                <option value="no" data-points="0">No</option>
+            </select>
+            
+            <label for="question8">What's your opinion on 'emo' culture?</label>
+            <select name="question8" id="question8">
+                <option value="love" data-points="25">I love it</option>
+                <option value="hate" data-points="0">I hate it</option>
+                <option value="neutral" data-points="10">I don't care</option>
+            </select>
+            
+            <label for="question9">Do you think people should express their emotions freely?</label>
+            <select name="question9" id="question9">
+                <option value="yes" data-points="20">Yes, definitely</option>
+                <option value="no" data-points="0">No</option>
+            </select>
+            
+            <label for="question10">How often do you listen to sad music?</label>
+            <select name="question10" id="question10">
+                <option value="often" data-points="25">Frequently</option>
+                <option value="sometimes" data-points="15">Sometimes</option>
+                <option value="rarely" data-points="5">Rarely</option>
+                <option value="never" data-points="0">Never</option>
+            </select>
+            
+            <input type="submit" value="Submit">
+        </form>
+        
+        <div id="result">
+            <p>Your score is: <span id="score">0</span></p>
+            <p id="relationship"></p>
+        </div>
+    </section>
+    
+    <script src="formulario.js"></script>
+</body>
+</html>

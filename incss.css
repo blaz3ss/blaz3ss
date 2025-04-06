@@ -1,0 +1,78 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #222; /* Fondo más oscuro */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra más intensa */
+    border-bottom: 2px solid #800080; /* Borde inferior morado */
+    font-family: 'Courier New', monospace; /* Fuente de estilo glitched */
+    letter-spacing: 1px; /* Espaciado de letras */
+    text-transform: uppercase; /* Mayúsculas */
+    filter: url(#glitch); /* Aplicar filtro glitch */
+}
+
+.navbar a {
+    color: #552255; /* Morado oscuro para la letra */
+    font-size: 18px;
+    margin: 0 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra para darle profundidad */
+}
+
+.navbar a:hover {
+    color: #ffffff; /* Rosa al pasar el mouse */
+    transform: scale(1.1);
+    text-shadow: 1px 1px 3px #ff69b4; /* Sombra rosa al pasar el mouse */
+}
+
+.bio {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #0f0a11;
+    border-radius: 8px;
+    border: 1px solid #800080; /* Borde morado */
+}
+
+h1 {
+    color: #710776;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra para el título */
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd; /* Color de texto más suave */
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #800080; /* Borde morado al avatar */
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Filtro Glitch (SVG) */
+svg {
+    display: none;
+}
