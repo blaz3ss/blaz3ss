@@ -14,7 +14,11 @@
     
     <section class="form-container">
         <h2>Check if David has a good opinion of you by answering these questions</h2>
-        <form id="skillIssueForm" action="#" method="post">
+        <form id="skillIssueForm">
+            <!-- Campo nuevo: Nombre del usuario -->
+            <label for="username">What's your name?</label>
+            <input type="text" id="username" name="username" required>
+
             <label for="question1">What's your favorite genre of music?</label>
             <select name="question1" id="question1">
                 <option value="emo" data-points="20">Emo Rap</option>
