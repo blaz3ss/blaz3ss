@@ -52,10 +52,10 @@ document.getElementById('skillIssueForm').addEventListener('submit', function(ev
     fetch(scriptURL, { method: 'POST', body: formData })
         .then(response => {
             console.log('Datos enviados correctamente');
-            alert('Tu puntuación se ha enviado correctamente');
+            alert('𝔜𝔬𝔲𝔯 𝔯𝔢𝔰𝔭𝔬𝔫𝔰𝔢𝔰 𝔥𝔞𝔳𝔢 𝔟𝔢𝔢𝔫 𝔰𝔲𝔟𝔪𝔦𝔱𝔱𝔢𝔡 𝔠𝔬𝔯𝔯𝔢𝔠𝔱𝔩𝔶 𝔱𝔬 𝔇𝔞𝔳𝔦𝔡 𝔡𝔞𝔱𝔞𝔟𝔞𝔰𝔢, 𝔱𝔥𝔞𝔫𝔨 𝔶𝔬𝔲 𝔣𝔬𝔯 𝔭𝔞𝔯𝔱𝔦𝔠𝔦𝔭𝔞𝔱𝔦𝔫𝔤');
         })
         .catch(error => {
             console.error('Error al enviar datos', error);
-            alert('Hubo un error al enviar los datos');
+            alert('𝔜𝔬𝔲𝔯 𝔯𝔢𝔰𝔭𝔬𝔫𝔰𝔢 𝔥𝔞𝔰 𝔫𝔬𝔱 𝔟𝔢𝔢𝔫 𝔰𝔢𝔫𝔱');
         });
 });
