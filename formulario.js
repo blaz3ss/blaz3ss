@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbxxLE05N-ErX2wiRfStEPHqnZRQlSDzGAm4rhRYM1wjVMOSGRKWluQxxx5wQEKV7Y0-/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbx5E2hwuwXuKKZb9E0hy0vByYBwcgnMFkYgDoQLatcOEDCpQXwOjbOOdSjulexuYslQ/exec";
 
 document.getElementById('skillIssueForm').addEventListener('submit', function(event) {
     event.preventDefault();
