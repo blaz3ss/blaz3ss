@@ -50,6 +50,12 @@ document.getElementById('skillIssueForm').addEventListener('submit', function(ev
     formData.append("score", normalizedScore.toFixed(2));
 
     fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => console.log('Datos enviados correctamente'))
-        .catch(error => console.error('Error al enviar datos', error));
+        .then(response => {
+            console.log('Datos enviados correctamente');
+            alert('Tu puntuación se ha enviado correctamente');
+        })
+        .catch(error => {
+            console.error('Error al enviar datos', error);
+            alert('Hubo un error al enviar los datos');
+        });
 });
