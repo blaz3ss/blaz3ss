@@ -8,7 +8,7 @@ document.getElementById('skillIssueForm').addEventListener('submit', function(ev
 
     // Verificar si el nombre es "david" (sin importar mayúsculas/minúsculas)
     if (username === "david") {
-        alert('𝔜𝔬𝔲 𝔠𝔞𝔫𝔫𝔬𝔱 𝔰𝔲𝔟𝔪𝔦𝔱 𝔱𝔥𝔢 𝔣𝔬𝔯𝔪 𝔞𝔰 𝔪𝔢, 𝔟𝔢𝔠𝔞𝔲𝔰𝔢 𝔦 𝔞𝔪 𝔱𝔥𝔢 𝔬𝔫𝔢 𝔞𝔫𝔡 𝔠𝔞𝔫𝔫𝔬𝔱 𝔟𝔢 𝔯𝔢𝔭𝔩𝔞𝔠𝔢𝔡');
+        alert('𝔜𝔬𝔲 𝔠𝔞𝔫𝔫𝔬𝔱 𝔰𝔲𝔟𝔪𝔦𝔱 𝔱𝔥𝔢 𝔟𝔬𝔯𝔪 𝔞𝔰 𝔪𝔢, 𝔟𝔢𝔠𝔞𝔲𝔰𝔢 𝔦 𝔞𝔪 𝔱𝔥𝔢 𝔬𝔫𝔢 𝔞𝔫𝔡 𝔠𝔞𝔫𝔫𝔬𝔱 𝔟𝔢 𝔯𝔢𝔭𝔩𝔞𝔠𝔢𝔡');
         return; // Detener el envío del formulario
     }
 
