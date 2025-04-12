@@ -1,15 +1,22 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbx5E2hwuwXuKKZb9E0hy0vByYBwcgnMFkYgDoQLatcOEDCpQXwOjbOOdSjulexuYslQ/exec";
 
+// Protección local: bloqueo si ya se ha enviado en la última hora
+const lastSubmitTime = localStorage.getItem('lastSubmitTime');
+const oneHour = 60 * 60 * 1000;
+
+if (lastSubmitTime && Date.now() - parseInt(lastSubmitTime) < oneHour) {
+    alert('𝔜𝔬𝔲 𝔥𝔞𝔳𝔢 𝔞𝔩𝔯𝔢𝔞𝔡𝔶 𝔰𝔲𝔟𝔪𝔦𝔱𝔱𝔢𝔡 𝔱𝔥𝔢 𝔣𝔬𝔯𝔪. 𝔚𝔞𝔦𝔱 1 𝔥𝔬𝔲𝔯 𝔬𝔯 𝔯𝔢𝔣𝔯𝔢𝔰𝔥 𝔱𝔥𝔢 𝔭𝔞𝔤𝔢 𝔱𝔬 𝔯𝔢𝔰𝔲𝔟𝔪𝔦𝔱.');
+    document.getElementById('skillIssueForm').style.display = 'none'; // opcional: oculta el formulario
+}
+
 document.getElementById('skillIssueForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Obtener el valor del nombre, lo convertimos a minúsculas para asegurarnos que la comparación no sea sensible a mayúsculas.
     const username = document.getElementById('username').value.trim().toLowerCase();
 
-    // Verificar si el nombre es "david" (sin importar mayúsculas/minúsculas)
     if (username === "david") {
         alert('𝔜𝔬𝔲 𝔠𝔞𝔫𝔫𝔬𝔱 𝔰𝔲𝔟𝔪𝔦𝔱 𝔱𝔥𝔢 𝔟𝔬𝔯𝔪 𝔞𝔰 𝔪𝔢, 𝔟𝔢𝔠𝔞𝔲𝔰𝔢 𝔦 𝔞𝔪 𝔱𝔥𝔢 𝔬𝔫𝔢 𝔞𝔫𝔡 𝔠𝔞𝔫𝔫𝔬𝔱 𝔟𝔢 𝔯𝔢𝔭𝔩𝔞𝔠𝔢𝔡');
-        return; // Detener el envío del formulario
+        return;
     }
 
     let score = 0;
@@ -53,21 +60,22 @@ document.getElementById('skillIssueForm').addEventListener('submit', function(ev
 
     document.getElementById('relationship').textContent = relationshipText;
 
-    // Enviar al Google Sheets
     const formData = new FormData();
     formData.append("username", document.getElementById('username').value);
     formData.append("score", normalizedScore.toFixed(2));
 
     fetch(scriptURL, { method: 'POST', body: formData })
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to send data');
-            }
+            if (!response.ok) throw new Error('Failed to send data');
             console.log('Datos enviados correctamente');
+
+            // ⏱️ Guardamos la hora del último envío
+            localStorage.setItem('lastSubmitTime', Date.now().toString());
+
             alert('𝔜𝔬𝔲𝔯 𝔯𝔢𝔰𝔭𝔬𝔫𝔰𝔢𝔰 𝔥𝔞𝔳𝔢 𝔟𝔢𝔢𝔫 𝔰𝔲𝔟𝔪𝔦𝔱𝔱𝔢𝔡 𝔠𝔬𝔯𝔯𝔢𝔠𝔱𝔩𝔶 𝔱𝔬 𝔇𝔞𝔳𝔦𝔡 𝔡𝔞𝔱𝔞𝔟𝔞𝔰𝔢, 𝔱𝔥𝔞𝔫𝔨 𝔶𝔬𝔲 𝔯𝔬𝔣𝔬𝔯 𝔭𝔞𝔯𝔱𝔦𝔠𝔦𝔭𝔞𝔱𝔦𝔫𝔤');
         })
         .catch(error => {
             console.error('Error al enviar datos', error);
-            alert('𝔜𝔬𝔲𝔯 𝔯𝔢𝔰𝔭𝔬𝔯𝔰𝔢 𝔥𝔞𝔰 𝔫𝔬𝔱 𝔟𝔢𝔢𝔫 𝔰𝔢𝔫𝔱');
+            alert('𝔜𝔬𝔲𝔯 𝔯𝔢𝔰𝔭𝔬𝔫𝔰𝔢 𝔥𝔞𝔰 𝔫𝔬𝔱 𝔟𝔢𝔢𝔫 𝔰𝔢𝔫𝔱');
         });
 });
