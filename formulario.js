@@ -1,14 +1,7 @@
+const scriptURL = "https://script.google.com/macros/s/AKfycbx5E2hwuwXuKKZb9E0hy0vByYBwcgnMFkYgDoQLatcOEDCpQXwOjbOOdSjulexuYslQ/exec";
+
 document.getElementById('skillIssueForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
-    // Nueva comprobación al enviar
-    const lastSubmitTime = localStorage.getItem('lastSubmitTime');
-    const oneHour = 60 * 60 * 1000;
-
-    if (lastSubmitTime && Date.now() - parseInt(lastSubmitTime) < oneHour) {
-        alert('𝔜𝔬𝔲 𝔞𝔩𝔯𝔢𝔞𝔡𝔶 𝔰𝔢𝔫𝔱 𝔱𝔥𝔢 𝔣𝔬𝔯𝔪. 𝔚𝔞𝔦𝔱 𝔞 𝔟𝔦𝔱.');
-        return;
-    }
 
     const username = document.getElementById('username').value.trim().toLowerCase();
 
@@ -66,10 +59,6 @@ document.getElementById('skillIssueForm').addEventListener('submit', function(ev
         .then(response => {
             if (!response.ok) throw new Error('Failed to send data');
             console.log('Datos enviados correctamente');
-
-            // ⏱️ Guardamos la hora del último envío
-            localStorage.setItem('lastSubmitTime', Date.now().toString());
-
             alert('𝔜𝔬𝔲𝔯 𝔯𝔢𝔰𝔭𝔬𝔫𝔰𝔢𝔰 𝔥𝔞𝔳𝔢 𝔟𝔢𝔢𝔫 𝔰𝔲𝔟𝔪𝔦𝔱𝔱𝔢𝔡 𝔠𝔬𝔯𝔯𝔢𝔠𝔱𝔩𝔶 𝔱𝔬 𝔇𝔞𝔳𝔦𝔡 𝔡𝔞𝔱𝔞𝔟𝔞𝔰𝔢, 𝔱𝔥𝔞𝔫𝔨 𝔶𝔬𝔲 𝔯𝔬𝔣𝔬𝔯 𝔭𝔞𝔯𝔱𝔦𝔠𝔦𝔭𝔞𝔱𝔦𝔫𝔤');
         })
         .catch(error => {
