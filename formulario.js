@@ -1,16 +1,14 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbx5E2hwuwXuKKZb9E0hy0vByYBwcgnMFkYgDoQLatcOEDCpQXwOjbOOdSjulexuYslQ/exec";
-
-// Protección local: bloqueo si ya se ha enviado en la última hora
-const lastSubmitTime = localStorage.getItem('lastSubmitTime');
-const oneHour = 60 * 60 * 1000;
-
-if (lastSubmitTime && Date.now() - parseInt(lastSubmitTime) < oneHour) {
-    alert('𝔜𝔬𝔲 𝔥𝔞𝔳𝔢 𝔞𝔩𝔯𝔢𝔞𝔡𝔶 𝔰𝔲𝔟𝔪𝔦𝔱𝔱𝔢𝔡 𝔱𝔥𝔢 𝔣𝔬𝔯𝔪. 𝔚𝔞𝔦𝔱 1 𝔥𝔬𝔲𝔯 𝔬𝔯 𝔯𝔢𝔣𝔯𝔢𝔰𝔥 𝔱𝔥𝔢 𝔭𝔞𝔤𝔢 𝔱𝔬 𝔯𝔢𝔰𝔲𝔟𝔪𝔦𝔱.');
-    document.getElementById('skillIssueForm').style.display = 'none'; // opcional: oculta el formulario
-}
-
 document.getElementById('skillIssueForm').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    // Nueva comprobación al enviar
+    const lastSubmitTime = localStorage.getItem('lastSubmitTime');
+    const oneHour = 60 * 60 * 1000;
+
+    if (lastSubmitTime && Date.now() - parseInt(lastSubmitTime) < oneHour) {
+        alert('𝔜𝔬𝔲 𝔞𝔩𝔯𝔢𝔞𝔡𝔶 𝔰𝔢𝔫𝔱 𝔱𝔥𝔢 𝔣𝔬𝔯𝔪. 𝔚𝔞𝔦𝔱 𝔞 𝔟𝔦𝔱.');
+        return;
+    }
 
     const username = document.getElementById('username').value.trim().toLowerCase();
 
